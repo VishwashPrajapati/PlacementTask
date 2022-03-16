@@ -1,0 +1,89 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Slider start */
+.main_slider {
+    width: 100vw;
+    margin: 0 auto;
+}
+
+.main_slider img {
+    height: 80vh;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    image-rendering: auto;
+}
+
+/* Slider Previous and next button CSS override for removing side space start*/
+.slick-next {
+    right: 25px !important;
+    z-index: 1;
+}
+
+.slick-prev {
+    left: 25px !important;
+    z-index: 1;
+}
+
+/* Slider Previous and next button CSS override for removing side space end*/
+
+/* Slider end */
+
+.spacer {
+    width: 95%;
+    margin: 0 auto;
+}
+
+/* Custom Order list Start */
+
+.custom_list {
+    counter-reset: customOrder;
+    list-style-type: none;
+    margin-left: 1rem;
+    text-indent: -1rem;
+    font-size: 1rem;
+}
+
+.custom_list li:before {
+    content: ''counter(customOrder)'. ';
+    counter-increment: customOrder;
+}
+
+/* Custom Order list end */
+
+
+button {
+    border: transparent;
+    background-color: rgb(44, 122, 167);
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+    color: white;
+    font-weight: bold;
+    width: 5rem;
+}
+
+.show {
+    display: block !important;
+}
+
+.hide {
+    display: none;
+}
+
+/* Media query for image height set for slider start */
+@media (max-width:600px) {
+    .main_slider img {
+        height: 50vh;
+        width: 100%;
+        display: block;
+        object-fit: cover;
+        image-rendering: auto;
+    }
+}
+
+/* Media query for image height set for slider end*/

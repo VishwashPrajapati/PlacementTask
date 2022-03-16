@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Task</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Slick slider Require CSS -->
+    <link rel="stylesheet" type="text/css" href="vendor/slick-1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/slick-1.8.1/slick/slick-theme.css" />
+    <!-- Slick slider Require CSS -->
+</head>
+
+<body>
+
+    <!-- Slider Section Start -->
+    <section>
+        <!-- Slider Main Div Start -->
+        <div class="main_slider">
+            <div><img src="assets/01.jpg"></div>
+            <div><img src="assets/02.jpg"></div>
+            <div><img src="assets/03.jpg"></div>
+            <div><img src="assets/04.jpg"></div>
+            <div><img src="assets/05.jpg"></div>
+        </div>
+
+        <!-- Slider Main Div End -->
+    </section>
+    <div class="spacer">
+        <ul class="custom_list">
+            <li><em>We have a variable, defined as $string, which is a string 200 characters long, and we want to
+                    display only 40 characters in a snippet. What approach would you take to achieve this?<em>
+                        <br>
+                        <button onClick="revealAns('one')">Reveal</button>
+                        <pre id="one" class="hide">
+                            <!-- <?php -->
+                                $string = 'xyz.... (200characters)'
+                                $string = substr($string, 0, 40)
+                                echo $string;
+                            <!-- ?> -->
+                        </pre>
+            </li>
+            <li><em>$string contains letters and numbers, the numbers aren't relevant to us, so we want to remove all of
+                    the numbers from the string. What approach would you take to achieve this?</em><br>
+                    <button onClick="revealAns('two')">Reveal</button>
+                    <pre id="two" class="hide">
+                    <!-- <?php  -->
+                        $words = 'xyz123xyz';
+                        $words = preg_replace('/[0-9]+/', '', $words);
+                        echo $words;
+                    <!-- ?> -->
+                </pre>
+            </li>
+            <li><em>$string has been encrypted using a basic encryption method. We know that all occurrences of the
+                    letters 'a, r, d' were replaced with 'c, m, e' respectively; we need to replace these letters with
+                    the respective letters. What approach would you take to achieve this?</em><br>
+                    <button onClick="revealAns('three')">Reveal</button>
+                    <pre id="three" class="hide">
+                    <!-- <?php  -->
+                        $string = 'afskgdfkgdfkgdjkghdfjdlj';
+                        $string = str_replace(['a', 'r', 'd'], ['c', 'm', 'e'], $string);
+                        echo $string;
+                    <!-- ?> -->
+                </pre>
+            </li>
+            <li><em>We know that $string is a url, what we need to know is the domain name used in the url. What
+                    approach would you take to achieve this?</em><br>
+                    <button onClick="revealAns('four')">Reveal</button>
+                    <pre id="four" class="hide">
+                    <!-- <?php -->
+                        $url = 'http://google.com/dhasjkdas/sadsdds/sdda/sdads.html';
+                        $parse = parse_url($url);
+                        echo $parse['host'];
+                    <!-- ?> -->
+                </pre>
+            </li>
+            <li><em>Lastly, there were 2 parameters passed in the url. We need to know the name and value of the 2
+                    parameters. What approach would you take to achieve this?</em><br>
+                    <button onClick="revealAns('five')">Reveal</button>
+                    <pre id="five" class="hide">
+                        <!-- <?php  -->
+                            $url = "https://testurl.com/test/1234?email=abc@test.com&name=sarah";
+                            $components = parse_url($url);
+                            parse_str($components['query'], $results);
+                            print_r($results); 
+                            <!-- ?>  -->
+                    </pre>
+            </li>
+        </ul>
+    </div>
+    <!-- Slider Section End -->
+
+    <!-- Slick slider Require JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+    <script type="text/javascript" src="vendor/slick-1.8.1/slick/slick.js"></script>
+    <!-- Slick slider Require JS -->
+    <script src="init.js" type="text/javascript"></script>
+</body>
+
+</html>
